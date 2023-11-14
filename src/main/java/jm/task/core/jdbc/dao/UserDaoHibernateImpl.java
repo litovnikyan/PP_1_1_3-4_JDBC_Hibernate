@@ -24,7 +24,6 @@ public class UserDaoHibernateImpl implements UserDao {
                     .executeUpdate();
             session.getTransaction().commit();
         } catch (Exception e) {
-            session.getTransaction().rollback();
             e.getMessage();
         }
     }
@@ -37,7 +36,6 @@ public class UserDaoHibernateImpl implements UserDao {
                     .executeUpdate();
             session.getTransaction().commit();
         } catch (Exception e) {
-            session.getTransaction().rollback();
             e.getMessage();
         }
     }
@@ -90,7 +88,6 @@ public class UserDaoHibernateImpl implements UserDao {
             session.createQuery("delete User").executeUpdate();
             session.getTransaction().commit();
         } catch (Exception e) {
-            session.getTransaction().rollback();
             e.printStackTrace();
         }
     }
